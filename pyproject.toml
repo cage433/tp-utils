@@ -1,0 +1,29 @@
+[project]
+name = "tp-utils"
+description = ""
+authors = [
+    {name = "cage433",email = "cage433@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+]
+dynamic = ["version"]
+
+[tool.poetry]
+packages = [{include = "tp_utils", from = "src"}]
+version = "0.0.0"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.2,<10.0.0)"
+]
+
+[tool.poetry.requires-plugins]
+poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }
